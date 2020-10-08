@@ -1,0 +1,76 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c51895323a369f822665634ee369b296a3ace882a6b71e020f4c2ece45169f2f
+
+name:           sexpressive
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Skyb0rg007/sexpressive#readme>
+homepage:       https://github.com/Skyb0rg007/sexpressive#readme
+bug-reports:    https://github.com/Skyb0rg007/sexpressive/issues
+author:         Skye Soss
+maintainer:     skyler.soss@gmail.com
+copyright:      2019 Skye Soss
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Skyb0rg007/sexpressive
+
+library
+  exposed-modules:
+      SExpressive.Parse
+      SExpressive.Print
+      SExpressive.Types
+  other-modules:
+      Paths_sexpressive
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , megaparsec
+    , recursion-schemes
+    , text
+  default-language: Haskell2010
+
+executable sexpressive-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_sexpressive
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , megaparsec
+    , recursion-schemes
+    , sexpressive
+    , text
+  default-language: Haskell2010
+
+test-suite sexpressive-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_sexpressive
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , megaparsec
+    , recursion-schemes
+    , sexpressive
+    , text
+  default-language: Haskell2010
